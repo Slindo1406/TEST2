@@ -1,0 +1,85 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "0271da6d-b0b7-4ed3-9bdc-02e39d9612a0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ca7b9f4c-fbcf-4c06-b6d4-e969d845bc0f",
+   "metadata": {},
+   "source": [
+    "Linear search is like going through a list one item at a time until you find what you're looking for or until you've checked everything. It's kind of like looking for a lost toy in your room by checking under each piece of furniture until you find it. This works okay for small lists, but it can take a long time for really big lists because you have to go through each item one after another. On the other hand, binary search is a smarter way to search for something in a sorted list. Instead of looking at each item one by one, you start by checking the middle item.If what you're looking for is smaller than the middle item, you look in the left half of the list. If it's bigger, you look in the right half. Then, you keep dividing the list in half and checking until you find what you need. It's like finding a word in a dictionary. You open it somewhere in the middle, see if the word you're looking for is before or after where you opened, and then repeat the process until you find the word you need. Binary search is faster than linear search for big lists because it doesn't have to check every single item.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "face9fb0-48ee-4e4c-81df-94a57e533bf6",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'linear_search' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[7], line 6\u001b[0m\n\u001b[0;32m      1\u001b[0m my_dataset \u001b[38;5;241m=\u001b[39m [\u001b[38;5;241m80\u001b[39m, \u001b[38;5;241m1259\u001b[39m, \u001b[38;5;241m1267\u001b[39m, \u001b[38;5;241m2327\u001b[39m, \u001b[38;5;241m2328\u001b[39m, \u001b[38;5;241m3317\u001b[39m, \u001b[38;5;241m4224\u001b[39m, \u001b[38;5;241m4225\u001b[39m, \u001b[38;5;241m4226\u001b[39m, \u001b[38;5;241m4227\u001b[39m, \u001b[38;5;241m4228\u001b[39m, \u001b[38;5;241m4229\u001b[39m, \u001b[38;5;241m4240\u001b[39m, \u001b[38;5;241m4241\u001b[39m, \u001b[38;5;241m4466\u001b[39m, \u001b[38;5;241m4470\u001b[39m, \u001b[38;5;241m4471\u001b[39m, \u001b[38;5;241m4472\u001b[39m,\n\u001b[0;32m      2\u001b[0m               \u001b[38;5;241m4473\u001b[39m, \u001b[38;5;241m4474\u001b[39m, \u001b[38;5;241m4476\u001b[39m, \u001b[38;5;241m4477\u001b[39m, \u001b[38;5;241m4572\u001b[39m, \u001b[38;5;241m4573\u001b[39m, \u001b[38;5;241m4574\u001b[39m, \u001b[38;5;241m4575\u001b[39m]  \n\u001b[0;32m      4\u001b[0m target_element \u001b[38;5;241m=\u001b[39m \u001b[38;5;241m4227\u001b[39m \n\u001b[1;32m----> 6\u001b[0m linear_result \u001b[38;5;241m=\u001b[39m \u001b[43mlinear_search\u001b[49m(my_dataset, target_element)\n\u001b[0;32m      7\u001b[0m \u001b[38;5;28mprint\u001b[39m(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mLinear Search Result:\u001b[39m\u001b[38;5;124m\"\u001b[39m, linear_result)\n\u001b[0;32m      9\u001b[0m my_dataset\u001b[38;5;241m.\u001b[39msort()\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'linear_search' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "my_dataset = [80, 1259, 1267, 2327, 2328, 3317, 4224, 4225, 4226, 4227, 4228, 4229, 4240, 4241, 4466, 4470, 4471, 4472,\n",
+    "              4473, 4474, 4476, 4477, 4572, 4573, 4574, 4575]  \n",
+    "\n",
+    "target_element = 4227 \n",
+    "\n",
+    "linear_result = linear_search(my_dataset, target_element)\n",
+    "print(\"Linear Search Result:\", linear_result)\n",
+    "\n",
+    "my_dataset.sort()\n",
+    "binary_result = binary_search(my_dataset, target_element)\n",
+    "print(\"Binary Search Result:\", binary_result)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f8f47bf7-ef2d-4cb6-8d0a-e7142bb71837",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

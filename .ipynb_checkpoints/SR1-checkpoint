@@ -1,0 +1,154 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "978f4737-204b-4a96-bc84-8740cd970ce3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "30ad1558-2ac2-48b2-bb22-887eec610c12",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data = pd.read_csv(\"C:/Users/ngcob/OneDrive/Documents/TP PROGRAMS/mali-refugee-camp.csv\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "926550ef-6594-4b45-9fc1-84db3534a346",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "      ID COUNTRY_CO       LOCATION_N LOCATION_T      Update  Establishm  \\\n",
+      "0     80        BFA             Deou        RLO  29/03/2012  14/10/1998   \n",
+      "1   1259        NER            Abala        RCO  19/07/2012  01/10/1998   \n",
+      "2   1267        NER           Tillia        RLO  29/03/2012  23/08/1999   \n",
+      "3   2327        BFA   Bobo-Dioulasso        RUO  25/04/2012  20/04/2004   \n",
+      "4   2328        BFA         Somgande        RUO  25/04/2012  01/11/2002   \n",
+      "5   3317        NER           Niamey        RUO  08/12/2006  08/12/2006   \n",
+      "6   4224        BFA           Mentao        RCO  16/10/2012  29/03/2012   \n",
+      "7   4225        BFA            Damba        RCO  16/10/2012  29/03/2012   \n",
+      "8   4226        BFA         Ferrerio        RCO  16/10/2012  29/03/2012   \n",
+      "9   4227        BFA  Goutoure Gnegne        RLO  29/03/2012  29/03/2012   \n",
+      "10  4228        NER         Mangaize        RCO  19/07/2012  29/03/2012   \n",
+      "11  4229        NER       Chinegodar        RLO  12/10/2012  29/03/2012   \n",
+      "12  4240        BFA       Gandafabou        RCO  16/10/2012  25/04/2012   \n",
+      "13  4241        MRT           M'Bera        RCO  25/04/2012  25/04/2012   \n",
+      "14  4466        NER     Tabareybarey        RCO  19/07/2012  19/07/2012   \n",
+      "15  4470        NER           Agando        RLO  12/10/2012  12/10/2012   \n",
+      "16  4471        NER       Chinewaren        RLO  12/10/2012  12/10/2012   \n",
+      "17  4472        NER         Tigzefen        RLO  12/10/2012  12/10/2012   \n",
+      "18  4473        NER       Banibangou        RLO  12/10/2012  12/10/2012   \n",
+      "19  4474        NER        Tankad?mi        RLO  12/10/2012  12/10/2012   \n",
+      "20  4476        BFA          Goudebo        RCO  18/12/2012  03/12/2012   \n",
+      "21  4477        BFA    Saag Nioniogo        RCO  03/12/2012  03/12/2012   \n",
+      "22  4572        NER        Koutougou        RLO  16/01/2013  16/01/2013   \n",
+      "23  4573        NER           Ayorou        RLO  16/01/2013  16/01/2013   \n",
+      "24  4574        NER           Miyane        RLO  18/01/2013  18/01/2013   \n",
+      "25  4575        NER          Kizamou        RLO  18/01/2013  18/01/2013   \n",
+      "\n",
+      "    Closing_Da                                         Commentary   POINT_X  \\\n",
+      "0   14/10/1998                                                NaN -0.717778   \n",
+      "1          NaN  / no population data, Coordinates taken from E...  3.432000   \n",
+      "2          NaN  / no population data, Coordinates taken from E...  4.779000   \n",
+      "3          NaN                                                NaN -4.291773   \n",
+      "4          NaN                                                NaN -1.528056   \n",
+      "5   08/12/2006                                                NaN  2.119000   \n",
+      "6          NaN                                                NaN -1.679783   \n",
+      "7          NaN                                                NaN -1.667553   \n",
+      "8          NaN                                                NaN -0.643400   \n",
+      "9          NaN                                                NaN -0.988117   \n",
+      "10         NaN                                                NaN  1.954201   \n",
+      "11         NaN                                                NaN  3.000000   \n",
+      "12         NaN                                                NaN -0.770525   \n",
+      "13         NaN                                                NaN -5.822239   \n",
+      "14         NaN                                                NaN  0.953167   \n",
+      "15         NaN                                                NaN  4.062219   \n",
+      "16         NaN                                                NaN  4.118163   \n",
+      "17         NaN                                                NaN  3.366667   \n",
+      "18         NaN                                                NaN  2.710116   \n",
+      "19         NaN                                                NaN  3.900000   \n",
+      "20         NaN                                                NaN -0.052417   \n",
+      "21         NaN                                                NaN -1.456667   \n",
+      "22         NaN                                                NaN  0.782913   \n",
+      "23         NaN                                                NaN  0.924950   \n",
+      "24         NaN                                                NaN  3.090000   \n",
+      "25         NaN                                                NaN  2.950000   \n",
+      "\n",
+      "      POINT_Y                    Type  \n",
+      "0   14.598100        Refugee Location  \n",
+      "1   14.929000            Refugee Camp  \n",
+      "2   16.146000        Refugee Location  \n",
+      "3   11.178100  Refugee Urban Location  \n",
+      "4   12.363889  Refugee Urban Location  \n",
+      "5   13.514000  Refugee Urban Location  \n",
+      "6   14.023883            Refugee Camp  \n",
+      "7   14.478405            Refugee Camp  \n",
+      "8   14.825550            Refugee Camp  \n",
+      "9   14.792655        Refugee Location  \n",
+      "10  14.681530            Refugee Camp  \n",
+      "11  15.233333        Refugee Location  \n",
+      "12  14.780276            Refugee Camp  \n",
+      "13  15.766218            Refugee Camp  \n",
+      "14  14.779281            Refugee Camp  \n",
+      "15  15.772567        Refugee Location  \n",
+      "16  15.746720        Refugee Location  \n",
+      "17  15.216667        Refugee Location  \n",
+      "18  15.038200        Refugee Location  \n",
+      "19  15.750000        Refugee Location  \n",
+      "20  14.019236            Refugee Camp  \n",
+      "21  12.539167            Refugee Camp  \n",
+      "22  14.948983        Refugee Location  \n",
+      "23  14.736290        Refugee Location  \n",
+      "24  15.170000        Refugee Location  \n",
+      "25  15.180000        Refugee Location  \n"
+     ]
+    }
+   ],
+   "source": [
+    "print(data)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1dfd22d6-31e8-445a-be0e-cce2f7259f6c",
+   "metadata": {},
+   "source": [
+    "I discovered this dataset by watching a YouTube video that was linked to the scenario of the test and also using Google search. my dataset is a Refugee data, particularly when accompanied by unique identifiers, origin countries, and settlement locations,it offers invaluable insights into human settlement dynamics crucial for sustainable development. The presence of unique identifiers facilitates accurate tracking of individuals and families. It understands the countries of origin of refugees provides essential context, informing diplomatic efforts aimed at addressing root causes of displacement and supporting peacebuilding initiatives.\n",
+    "\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
